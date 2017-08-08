@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Dominio | Titulo pagina {% endblock %}</title>
+        <meta name="description" content="{% block description %}{% endblock %}"/>
+    {# Load the tag library #}
+    {% load bootstrap3 %}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    {# Load CSS and JavaScript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        {% block head %}
+        {% endblock %}
+</head>
+<body>
+        {% include "navbar.html" %}
+
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        {% include "footer.html" %}
+
+        <!-- All that javascript -->
+
+
+
+        {% block scripts %}
+        {% endblock %}
+    </body>
+</html>

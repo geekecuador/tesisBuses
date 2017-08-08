@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-8 col-sm-12">
+            {% block main-content %}{% endblock %}
+        </div>
+        <div class="col-md-4 hidden-sm">
+            {% block sidebar %}{% endblock %}
+        </div>
+    </div>
+
+
+
+<form role="form">
+    <legend>Form Title</legend>
+    {% csrf_token %}
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+{% endblock %}
